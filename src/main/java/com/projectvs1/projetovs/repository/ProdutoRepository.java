@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
-import com.projectvs1.projetovs.model.Product;
+import com.projectvs1.projetovs.model.Produto;
 
 @Repository
-public class ProductRepository {
+public class ProdutoRepository {
 
-    private List<Product> produtos = new ArrayList<Product>();
+    private List<Produto> produtos = new ArrayList<Produto>();
     private Integer ultimoId = 0;
 
     /**
      * Método para retornar uma lista de produtos
      * @return lista de produtos
      */
-    public List<Product> obterTodos(){
+    public List<Produto> obterTodos(){
         return produtos;
     }
 
@@ -27,7 +27,7 @@ public class ProductRepository {
      * @param id do produto que será localizado
      * @return retona um produto caso tenha encontrado
      */
-    public Optional<Product> obterPorId(Integer id){
+    public Optional<Produto> obterPorId(Integer id){
         return produtos
         .stream()
         .filter(product -> product.getId() == id).findFirst();
@@ -39,7 +39,7 @@ public class ProductRepository {
      * @param produto a ser adicionado.
      * @return Retorna o produto que foi adicionado na lista.
      */
-    public Product adicionar (Product produto){
+    public Produto adicionar (Produto produto){
 
         ultimoId++;
         produto.setId(ultimoId);
@@ -53,8 +53,8 @@ public class ProductRepository {
      * @param produto que será atualizado
      * @return Retorna o produto após atualizar a lista;
      */
-    public Product atualizar(Product produto){
-       Optional<Product> produtoencontrado =  obterPorId(produto.getId());
+    public Produto atualizar(Produto produto){
+       Optional<Produto> produtoencontrado =  obterPorId(produto.getId());
 
        if(produtoencontrado.isEmpty()){
         throw new InputMismatchException("Produto não encontrado");

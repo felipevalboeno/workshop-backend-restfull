@@ -1,7 +1,7 @@
 package com.projectvs1.projetovs.model;
 
-public class Product {
-    
+public class Produto {
+
 //#region atributos
     private Integer id;
 
