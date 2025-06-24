@@ -1,18 +1,13 @@
-package com.projectvs1.projetovs.model;
+package com.projectvs1.projetovs.shared;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 
 //Anotação pra tornar a classe Produto uma entidade/tabela no banco
-@Entity
-public class Produto {
+
+public class ProdutoDTO {
 
     // #region atributos
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String nome;
@@ -65,5 +60,7 @@ public class Produto {
         this.observacao = observacao;
     }
 
-    // #endregion
+    
+
+
 }
